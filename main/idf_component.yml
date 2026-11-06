@@ -1,0 +1,8 @@
+# the BSP's own dependencies (third_party/ai-passport/components/bsp/idf_component.yml),
+# repeated here so the component manager resolves them for this project too
+dependencies:
+  idf: ">=5.5.3,<5.6.0"
+  lvgl/lvgl: "^9.5.0"
+  espressif/esp_lvgl_port: "2.9.0"
+  espressif/button: "4.2.0"
+  espressif/esp_codec_dev: "1.6.2"

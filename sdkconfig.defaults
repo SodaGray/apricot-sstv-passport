@@ -1,0 +1,24 @@
+# --- target ---
+CONFIG_IDF_TARGET="esp32c3"
+
+# --- flash: the AI Passport has 8 MB; the app needs well under 1 MB ---
+CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
+CONFIG_ESPTOOLPY_HEADER_FLASHSIZE_UPDATE=n
+
+# --- console on the C3's native USB (GPIO18/19). UART0's TX is GPIO21,
+#     the backlight on this board ---
+CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y
+CONFIG_ESP_CONSOLE_SECONDARY_NONE=y
+
+# --- speed: the decoder runs in the mic task ---
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
+CONFIG_FREERTOS_HZ=1000
+
+# --- no radio: Wi-Fi and Bluetooth stay off, which leaves the heap to the
+#     decoder (~145 KB) ---
+CONFIG_BT_ENABLED=n
+
+# --- LVGL is pulled in by the BSP but never started here; keep its pool
+#     small in case anything links it ---
+CONFIG_LV_COLOR_DEPTH_16=y
+CONFIG_LV_MEM_SIZE_KILOBYTES=8

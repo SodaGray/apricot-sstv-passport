@@ -1,0 +1,5 @@
+/* SPDX-License-Identifier: GPL-3.0-only */
+#ifndef APRICOT_PASSPORT_VERSION_H
+#define APRICOT_PASSPORT_VERSION_H
+#define APRICOT_PASSPORT_VERSION "26.11(3)"
+#endif

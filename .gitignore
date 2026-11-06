@@ -1,0 +1,11 @@
+build/
+sdkconfig
+sdkconfig.old
+managed_components/
+host/bench_port
+host/bench_orig
+host/sim_app
+host/out/
+host/splash.o
+*.bin
+__pycache__/
